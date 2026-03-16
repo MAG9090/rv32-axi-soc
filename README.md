@@ -86,7 +86,7 @@ rv32-axi-soc/
  
 ```bash
 # Clone the repo
-git clone https://github.com/[username]/rv32-axi-soc.git
+git clone https://github.com/MAG9090/rv32-axi-soc.git
 cd rv32-axi-soc
  
 # Source EDA tools (university server)
