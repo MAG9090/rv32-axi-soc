@@ -1,15 +1,14 @@
 # rv32-axi-soc
  
-A RISC-V SoC with AXI/APB interconnect, UVM verification, synthesis, P&R, timing closure, and FPGA prototyping.
- 
 ## Architecture
  
 <!-- TODO: Add block diagram image here -->
 <!-- ![SoC Block Diagram](docs/diagrams/soc_block_diagram.png) -->
+TODO: Block diagram
  
 ### Overview
  
-A minimal system-on-chip built around the PicoRV32 RISC-V core with industry-standard bus protocols, verified using UVM methodology, and prototyped on FPGA.
+A RISC-V SoC with AXI/APB interconnect, UVM verification, synthesis, P&R, timing closure, and FPGA prototyping.
  
 ### Components
  
