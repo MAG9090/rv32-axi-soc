@@ -6,43 +6,44 @@
 # Server:     ece-rschsrv.ece.gatech.edu
 # 
 # Usage: source setup_eda.sh
-# Note:  Must be sourced, not executed (need environment changes in current shell)
+# Note:  Must be sourced, not executed. Clean setup and prep environment adapted to university server.
 # ============================================
 
-# Load base ECE module
+# Load base ECE module (exposes tool modulefiles)
 module load ece-software
 
 # --------------------------------------------
 # Synopsys Tools
 # --------------------------------------------
-# Design Compiler (synthesis)
-# source /tools/software/synopsys/syn/latest/bin/environ.sh
+# dc_shell, vcs, verdi, icc2_shell, pt_shell, starrc, hspice, lc_shell
+module load synopsys/latest
 
-# VCS (simulation)
-# ource /tools/software/synopsys/vcs/latest/bin/environ.sh
-
-# Verdi (waveform debug)
-# source /tools/software/synopsys/verdi/latest/bin/environ.sh
-
-# PrimeTime (static timing analysis)
-# source /tools/software/synopsys/prime/latest/bin/environ.sh
-
-# SpyGlass (linting / CDC)
-# source /tools/software/synopsys/spyglass/latest/bin/environ.sh
+# VCS additional environment setup
+source /tools/software/synopsys/vcs/latest/bin/environ.sh
 
 # --------------------------------------------
 # Cadence Tools
 # --------------------------------------------
 module load cadence/base
 
+# xcelium, spectre, quantus, virtuoso, liberate
+# Adding tool binaries to PATH
+export PATH="/tools/software/cadence/xcelium/latest/tools/bin:$PATH"
+export PATH="/tools/software/cadence/spectre/latest/bin:$PATH"
+export PATH="/tools/software/cadence/quantus/latest/bin:$PATH"
+export PATH="/tools/software/cadence/ic/latest/bin:$PATH"
+export PATH="/tools/software/cadence/liberate/latest/bin:$PATH"
+
 # --------------------------------------------
 # Siemens / Mentor Tools
 # --------------------------------------------
+# calibre
 module load siemens/latest
 
 # --------------------------------------------
 # Xilinx Vivado (FPGA)
 # --------------------------------------------
+# TODO: Vivado not found via module
 module load xilinx/latest
 
 # --------------------------------------------
@@ -51,10 +52,27 @@ module load xilinx/latest
 echo "=========================================="
 echo " EDA Tool Setup Complete"
 echo "=========================================="
-echo " DC Shell:  $(which dc_shell 2>/dev/null || echo 'NOT FOUND')"
-echo " VCS:       $(which vcs 2>/dev/null || echo 'NOT FOUND')"
-echo " Verdi:     $(which verdi 2>/dev/null || echo 'NOT FOUND')"
-echo " Innovus:   $(which innovus 2>/dev/null || echo 'NOT FOUND')"
-echo " Genus:     $(which genus 2>/dev/null || echo 'NOT FOUND')"
-echo " Vivado:    $(which vivado 2>/dev/null || echo 'NOT FOUND')"
+echo ""
+echo " --- Synopsys (Digital Flow) ---"
+echo " DC Shell:    $(which dc_shell 2>/dev/null || echo 'NOT FOUND')"
+echo " ICC2:        $(which icc2_shell 2>/dev/null || echo 'NOT FOUND')"
+echo " PrimeTime:   $(which pt_shell 2>/dev/null || echo 'NOT FOUND')"
+echo " StarRC:      $(which StarXtract 2>/dev/null || echo 'NOT FOUND')"
+echo " VCS:         $(which vcs 2>/dev/null || echo 'NOT FOUND')"
+echo " Verdi:       $(which verdi 2>/dev/null || echo 'NOT FOUND')"
+echo " HSPICE:      $(which hspice 2>/dev/null || echo 'NOT FOUND')"
+echo " LC Shell:    $(which lc_shell 2>/dev/null || echo 'NOT FOUND')"
+echo ""
+echo " --- Cadence ---"
+echo " Xcelium:     $(which xrun 2>/dev/null || echo 'NOT FOUND')"
+echo " Spectre:     $(which spectre 2>/dev/null || echo 'NOT FOUND')"
+echo " Quantus:     $(which quantus 2>/dev/null || echo 'NOT FOUND')"
+echo " Virtuoso:    $(which virtuoso 2>/dev/null || echo 'NOT FOUND')"
+echo " Liberate:    $(which liberate 2>/dev/null || echo 'NOT FOUND')"
+echo ""
+echo " --- Siemens ---"
+echo " Calibre:     $(which calibre 2>/dev/null || echo 'NOT FOUND')"
+echo ""
+echo " --- FPGA ---"
+echo " Vivado:      $(which vivado 2>/dev/null || echo 'NOT FOUND')"
 echo "=========================================="
