@@ -8,16 +8,16 @@ TODO: Block diagram
  
 ### Overview
  
-A RISC-V SoC with AXI/APB interconnect, UVM verification, synthesis, P&R, timing closure, and FPGA prototyping.
+A RISC-V SoC with AXI/APB interconnect, UVM verification, synthesis, P&R, timing closure, and Openlane physical design flow.
  
 ### Components
  
 - **Processor:** PicoRV32 (RV32IMC)
 - **Bus Fabric:** AXI interconnect with AXI-to-APB bridge
 - **Memory:** SRAM controller with behavioral model (custom SRAM macro planned)
-- **Peripherals:** UART, SPI controller, GPIO
+- **Peripherals:** UART, SPI controller, GPIO (additional: interrupt controller, DMA controller)
 - **Verification:** UVM-based testbench with constrained-random stimulus and functional coverage
-- **Implementation:** Synthesis, place-and-route, timing closure, FPGA prototyping
+- **Implementation:** Synthesis, place-and-route, timing closure, Openlane implementation
  
 ### Memory Map
  
@@ -75,8 +75,7 @@ rv32-axi-soc/
 - [ ] System-level C tests
 - [ ] Synthesis + timing closure
 - [ ] Place and route
-- [ ] FPGA prototyping
-- [ ] *(Stretch)* Custom SRAM macro integration
+- [ ] Openlane physical designe flow
  
 ## Status
  
