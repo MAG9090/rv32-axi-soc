@@ -5,6 +5,8 @@
 <!-- TODO: Add block diagram image here -->
 <!-- ![SoC Block Diagram](docs/diagrams/soc_block_diagram.png) -->
 TODO: Block diagram
+<img width="791" height="529" alt="Screenshot 2026-06-22 at 19 26 19" src="https://github.com/user-attachments/assets/a520c8a4-8e2f-46e0-a9ee-7918b0df9b3e" />
+
  
 ### Overview
  
