@@ -29,6 +29,7 @@ A RISC-V SoC with AXI/APB interconnect, UVM verification, synthesis, P&R, timing
 | `0x1000_0000 - 0x1000_00FF` | UART    | APB      |
 | `0x1000_0100 - 0x1000_01FF` | SPI     | APB      |
 | `0x1000_0200 - 0x1000_02FF` | GPIO    | APB      |
+| `0x1000_0300 - 0x1000_03FF` | Other   | APB      |
  
 *Address map is preliminary and subject to change.*
  
